@@ -10,8 +10,14 @@ message.reply('pong');
 console.log(message);
 });
 client.on('presenceUpdate', function(oldMember, newMember) {
+
+if((oldMember.presence.status=="offline") &&((newMember.presence.status=="online")||(newMember.presence.status=="idle") )&& newMember.user.username=="bramas")
+   newMember.user.sendMessage("Bonjour maitre, je suis le bot de YAHIA, que puis-je faire pour vous aujourdhui ?");
+
 console.log(oldMember.presence, '=>', newMember.presence);
 });
+
+
 client.login(process.env.DISCORD_TOKEN);
 
 
