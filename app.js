@@ -13,3 +13,14 @@ client.on('presenceUpdate', function(oldMember, newMember) {
 console.log(oldMember.presence, '=>', newMember.presence);
 });
 client.login(process.env.DISCORD_TOKEN);
+
+
+
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.listen(process.env.PORT || 3000);
