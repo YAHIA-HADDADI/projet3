@@ -8,7 +8,7 @@ if (message.content === 'ping') {
 message.reply('pong');
 }
    else(message.content === 'salut'){
-      message.reply('salut cv');
+      message.reply('salut cv');}
 console.log(message);
 });
 client.on('presenceUpdate', function(oldMember, newMember) {
