@@ -19,9 +19,10 @@ message.reply('pong');
 				message.reply(response.data[0].fact);
 			}).catch(console.log);
    
-   
+ else message.reply("Bonjour , désolé j'ai rien compris");  
 console.log(message);
 });
+	
 client.on('presenceUpdate', function(oldMember, newMember) {
 
 if((newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="wali")
