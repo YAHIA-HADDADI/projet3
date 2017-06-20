@@ -1,5 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const axios = require('axios');
+
+
+
+
 client.on('ready', () => {
 console.log('I am ready!');
 });
@@ -7,8 +12,13 @@ client.on('message', message => {
 if (message.content === 'ping') {
 message.reply('pong');
 }
-   else if (message.content === 'salut'){
-      message.reply('salut cv');}
+   else if (message.content.search("!blague") != -1) {
+			
+			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
+				message.reply(response.data[0].fact);
+			}).catch(console.log);
+   
+   
 console.log(message);
 });
 client.on('presenceUpdate', function(oldMember, newMember) {
