@@ -17,7 +17,7 @@ message.reply('pong');
 			
 			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
 				message.reply(response.data[0].fact);
-			}).catch(console.log);
+			}).catch(console.log); }
    
  else message.reply("Bonjour , désolé j'ai rien compris");  
 console.log(message);
