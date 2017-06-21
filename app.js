@@ -20,7 +20,6 @@ message.reply('pong');
 			}).catch(console.log); }
    
 
-else message.reply("Salut, j'ai rien compris"); 
 	
 console.log(message);
 });
