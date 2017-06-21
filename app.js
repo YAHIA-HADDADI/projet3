@@ -19,7 +19,9 @@ message.reply('pong');
 				message.reply(response.data[0].fact);
 			}).catch(console.log); }
    
-  
+
+else message.reply("Salut, j'ai rien compris"); 
+	
 console.log(message);
 });
 	
