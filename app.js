@@ -10,7 +10,12 @@ client.on('ready', () => {
 console.log('I am ready!');
 });
 client.on('message', message => {
-if (message.content === 'ping') {
+if(message.mentions.users.has(client.user.id))
+{
+	message.reply("salut je suis la");
+}
+	
+else if (message.content === 'ping') {
 message.reply('pong');
 }
    else if (message.content === '!blague') {
