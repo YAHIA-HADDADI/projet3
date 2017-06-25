@@ -14,21 +14,22 @@ if(message.mentions.users.has(client.user.id))
 {
 	message.reply("salut je suis la");
 }
-	
-else if (message.content === 'ping') {
-message.reply('pong');
-}
-   else if (message.content === '!blague') {
-			
-			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
+	switch(message.content) {
+    case "ping": message.reply('pong');
+        
+        break;
+    case "!blague":axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
 				message.reply(response.data[0].fact);
 				console.log(response.data[0].fact);
-			}).catch(console.log); }
-   
+			}).catch(console.log); 
+        
+        break;
+    default: message.reply("je n'ai pas compris votre message");
+        
+}
 
 	
-console.log(message);
-});
+
 	
 client.on('presenceUpdate', function(oldMember, newMember) {
 
