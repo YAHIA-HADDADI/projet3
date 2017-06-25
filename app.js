@@ -35,7 +35,9 @@ if(message.mentions.users.has(client.user.id))
 	var mot_cle=message.content.substring(position_deb+taille,message.content.length)
 	
 	axios.get('http://api.openweathermap.org/data/2.5/weather?q='+mot_cle+' &appid=39fe3cf4cf00a66d11c4b5423669b0cc').then(function(response){
-				message.reply(response.data.weather[0].description);
+				message.reply("La météo de "+mot_cle+"\n"+
+					      "longitude"+response.data.coord.lon+"\n"+
+					      response.data.weather[0].description);
 			}).catch(console.log); 
 }else
 {
