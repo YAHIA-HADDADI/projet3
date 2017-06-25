@@ -30,7 +30,7 @@ if(message.mentions.users.has(client.user.id))
 
 	
 
-	
+}	
 client.on('presenceUpdate', function(oldMember, newMember) {
 
 if((newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="bramas")
