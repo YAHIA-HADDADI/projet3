@@ -31,7 +31,6 @@ console.log(message);
 
 	
 
-}	
 client.on('presenceUpdate', function(oldMember, newMember) {
 
 if((newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="bramas")
