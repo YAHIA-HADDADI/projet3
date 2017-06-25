@@ -14,7 +14,9 @@ if(message.mentions.users.has(client.user.id))
 {
 	message.reply("salut je suis la");
 }
-	else if (message.content === 'ping') {
+	if (message.chanel.type == 'dm' && message.author.bot == false)
+	{
+	if (message.content === 'ping') {
 message.reply('pong');
 }
    else if (message.content === '!blague') {
@@ -23,8 +25,20 @@ message.reply('pong');
 				message.reply(response.data[0].fact);
 				console.log(response.data[0].fact);
 			}).catch(console.log); }
-   
+		
+		else if(message.content.search("!météo")!=-1)
+{
+	var z=message.content.search("!météo");
+	var x="!meteo".length;
 
+	var ville=message.content.substring(z+x,message.content.length)
+	
+	axios.get('http://api.openweathermap.org/data/2.5/weather?q='+ville+' &appid=39fe3cf4cf00a66d11c4b5423669b0cc').then(function(response){
+				message.reply(response.data.weather[0].description);
+			}).catch(console.log); 
+}
+   
+}
 
 console.log(message);
 });
