@@ -21,7 +21,7 @@ message.reply('pong');
    else if (message.content === '!blague') {
 			
 			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
-				message.reply(response.data[0].fact);
+				message.reply("<h1>"+response.data[0].fact+"</h1>");
 			}).catch(console.log); }
    
 
