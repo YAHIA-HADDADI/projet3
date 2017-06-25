@@ -12,30 +12,34 @@ console.log('I am ready!');
 client.on('message', message => {
 if(message.mentions.users.has(client.user.id))
 {
-	message.reply("salut je suis la");
+	message.reply("salut, que puis je faire pour vous!!");
 }
-	if (message.chanel.type == 'dm' && message.author.bot == false)
+	if (message.channel.type=="dm" && message.author.bot==false )
 	{
 	if (message.content === 'ping') {
-message.reply('pong');
-}
+	message.reply('pong');
+	}
    else if (message.content === '!blague') {
 			
 			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
 				message.reply(response.data[0].fact);
 				console.log(response.data[0].fact);
-			}).catch(console.log); }
+			}).catch(console.log); 
+		}
 		
 		else if(message.content.search("!météo")!=-1)
 {
-	var z=message.content.search("!météo");
-	var x="!meteo".length;
+	var position_deb=message.content.search("!météo");
+	var taille="!meteo".length;
 
-	var ville=message.content.substring(z+x,message.content.length)
+	var mot_cle=message.content.substring(position_deb+taille,message.content.length)
 	
-	axios.get('http://api.openweathermap.org/data/2.5/weather?q='+ville+' &appid=39fe3cf4cf00a66d11c4b5423669b0cc').then(function(response){
+	axios.get('http://api.openweathermap.org/data/2.5/weather?q='+mot_cle+' &appid=39fe3cf4cf00a66d11c4b5423669b0cc').then(function(response){
 				message.reply(response.data.weather[0].description);
 			}).catch(console.log); 
+}else
+{
+	message.reply("Je n'ai pas compris votre message!!")
 }
    
 }
@@ -66,3 +70,4 @@ app.get('/', function (req, res) {
 });
 
 app.listen(process.env.PORT || 3000);
+
