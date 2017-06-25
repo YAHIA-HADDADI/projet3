@@ -21,7 +21,8 @@ message.reply('pong');
    else if (message.content === '!blague') {
 			
 			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb=1').then(function(response){
-				message.reply("<h1>"+response.data[0].fact+"</h1>");
+				message.reply(response.data[0].fact);
+				console.log(response.data[0].fact);
 			}).catch(console.log); }
    
 
@@ -31,7 +32,7 @@ console.log(message);
 	
 client.on('presenceUpdate', function(oldMember, newMember) {
 
-if((newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="wali")
+if((newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="bramas")
    newMember.user.sendMessage("Bonjour maitre, je suis le bot de YAHIA, que puis-je faire pour vous aujourdhui ?");
 
 console.log(oldMember.presence, '=>', newMember.presence);
