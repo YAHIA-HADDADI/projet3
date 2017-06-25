@@ -39,7 +39,7 @@ if(message.mentions.users.has(client.user.id))
 			message.reply("weather of  "+mot_cle+"\n"+
 					      "longitude: "+response.data.coord.lon+"\n"+
 					      "Latitude: "+response.data.coord.lat+"\n"+
-					      "Temperature: "+response.data.base.main.temp+" k"+"\n"+
+					      
 					    "Description :"  +response.data.weather[0].description);
 			}).catch(console.log); 
 }else
