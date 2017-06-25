@@ -25,7 +25,7 @@ message.reply('pong');
 			}).catch(console.log); }
    
 
-	
+else message.reply("désolé je n'ai pas comptis votre message");	
 console.log(message);
 });
 
