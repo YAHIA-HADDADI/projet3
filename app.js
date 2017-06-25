@@ -40,7 +40,7 @@ if(message.mentions.users.has(client.user.id))
 					      "longitude: "+response.data.coord.lon+"\n"+
 					      "Latitude: "+response.data.coord.lat+"\n"+
 					      "Temperature: "+response.data.temp+" k"+"\n"+
-					    "Description"  response.data.weather[0].description);
+					    "Description :"  +response.data.weather[0].description);
 			}).catch(console.log); 
 }else
 {
