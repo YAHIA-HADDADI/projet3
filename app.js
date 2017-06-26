@@ -56,10 +56,11 @@ console.log(message);
 
 client.on('presenceUpdate', function(oldMember, newMember) {
 
-if((newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="bramas")
+if((oldMember.presence.status=="dnd") ||(oldMember.presence.status=="offline")){
+	if (newMember.presence.status=="online" || newMember.presence.status=="idle") && newMember.user.username=="bramas")
    newMember.user.sendMessage("Bonjour maitre, je suis le bot de YAHIA, que puis-je faire pour vous aujourdhui ?");
 
-console.log(oldMember.presence, '=>', newMember.presence);
+console.log(oldMember.presence, '=>', newMember.presence);}
 });
 
 
